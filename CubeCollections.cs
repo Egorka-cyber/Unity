@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CubeCollections : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject[] cubes;
+    [SerializeField] private Text inputText;
+
+    public void DeleteCube()
     {
-        
+        Destroy(cubes[int.Parse(inputText.text)]);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PrintCube()
     {
-        
+        print(cubes[int.Parse(inputText.text)]);
     }
 }
